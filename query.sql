@@ -124,3 +124,28 @@ ALTER TABLE person DROP CONSTRAINT unique_email_address;
 ALTER TABLE person ADD UNIQUE (email);
 
 -- Check Constraints
+SELECT DISTINCT gender FROM person;
+
+ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = 'Female' OR gender = 'Male');
+
+-- Delete Records
+DELETE FROM person WHERE gender = 'Female' AND country_of_birth = 'Nigeria';
+
+-- Update Records
+UPDATE person SET email = 'test@gmail.com' WHERE id = 3;
+
+UPDATE person SET first_name = 'Test', last_name = 'Testis' WHERE id = 3;
+
+-- On conflict do noting
+SELECT * FROM person WHERE id = 11;
+
+INSERT INTO person (id, first_name, last_name, gender, email, date_of_birth, country_of_birth) 
+VALUES (11, 'Kur', 'Kur', 'Male', 'cjanuarya@msn.com', DATE '2019-11-14', 'Democratic Republic of the Congo') ON CONFLICT (email) DO NOTHING;
+
+-- Upsert
+INSERT INTO person (id, first_name, last_name, gender, email, date_of_birth, country_of_birth) 
+VALUES (11, 'Kur', 'Kur', 'Male', 'cjanuarya@msn.com.uk', DATE '2019-11-14', 'Democratic Republic of the Congo') ON CONFLICT (email) DO UPDATE SET email = EXCLUDED.email;
+
+-- Foreign Keys & Joins
+
+
