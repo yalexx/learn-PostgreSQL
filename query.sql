@@ -46,5 +46,19 @@ SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth ORDER BY
 SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) > 5 ORDER BY country_of_birth;
 
 -- Aggregate Functions
+SELECT MAX(price) FROM car;
 
+SELECT MIN(price) FROM car;
+
+SELECT AVG(price) FROM car;
+
+SELECT ROUND(AVG(price)) FROM car;
+
+SELECT make, MIN(price) FROM car GROUP BY make;
+
+SELECT SUM(price) FROM car;
+
+SELECT make, SUM(price) FROM car GROUP BY make;
+
+-- Aritmatic operations
 

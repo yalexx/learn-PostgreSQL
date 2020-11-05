@@ -31,8 +31,8 @@ insert into car (id, make, model, price) values (24, 'Mercedes-Benz', 'C-Class',
 insert into car (id, make, model, price) values (25, 'Saab', '9-3', '57784.35');
 insert into car (id, make, model, price) values (26, 'Bentley', 'Continental', '34148.39');
 insert into car (id, make, model, price) values (27, 'Chevrolet', 'Corvette', '33531.85');
-insert into car (id, make, model, price) values (28, 'Mitsubishi', 'Eclipse', '28798.25');
-insert into car (id, make, model, price) values (29, 'Rolls-Royce', 'Ghost', '87503.40');
+insert into car (id, make, model, pr
+ce) values (29, 'Rolls-Royce', 'Ghost', '87503.40');
 insert into car (id, make, model, price) values (30, 'Kia', 'Rondo', '30839.08');
 insert into car (id, make, model, price) values (31, 'Chevrolet', 'Cobalt SS', '47121.79');
 insert into car (id, make, model, price) values (32, 'Volkswagen', 'Routan', '73310.46');
