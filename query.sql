@@ -162,8 +162,14 @@ SELECT * FROM person LEFT JOIN car ON person.car_id = car.id WHERE car.* IS NULL
 -- Exporting to CSV
 \copy (SELECT * FROM person LEFT JOIN car ON person.car_id = car.id) TO '/Users/yankoaleksandrov/Kamion/learn-PostgreSQL/results.csv' DELIMITER ',' CSV HEADER;
  
+-- Serial and Sequences
+SELECT * FROM person_id_seq;
 
+ALTER SEQUENCE person_id_seq RESTART WITH 10;
 
+-- Extensions | UUID
+SELECT * FROM pg_available_extensions;
 
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
-``
+SELECT * FROM person JOIN car USING (car_uid);
