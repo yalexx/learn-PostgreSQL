@@ -147,5 +147,19 @@ INSERT INTO person (id, first_name, last_name, gender, email, date_of_birth, cou
 VALUES (11, 'Kur', 'Kur', 'Male', 'cjanuarya@msn.com.uk', DATE '2019-11-14', 'Democratic Republic of the Congo') ON CONFLICT (email) DO UPDATE SET email = EXCLUDED.email;
 
 -- Foreign Keys & Joins
+UPDATE person SET car_id = 1 WHERE id = 2;
+
+-- Innter Joins
+SELECT * FROM person JOIN car ON person.car_id = car.id;
+
+SELECT person.first_name, car.make FROM person JOIN car ON person.car_id = car.id;
+
+-- Left joins
+SELECT * FROM person LEFT JOIN car ON person.car_id = car.id;
+
+SELECT * FROM person LEFT JOIN car ON person.car_id = car.id WHERE car.* IS NULL;
+
+
+
 
 
