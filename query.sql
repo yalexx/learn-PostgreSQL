@@ -149,7 +149,7 @@ VALUES (11, 'Kur', 'Kur', 'Male', 'cjanuarya@msn.com.uk', DATE '2019-11-14', 'De
 -- Foreign Keys & Joins
 UPDATE person SET car_id = 1 WHERE id = 2;
 
--- Innter Joins
+-- Innter Joins``
 SELECT * FROM person JOIN car ON person.car_id = car.id;
 
 SELECT person.first_name, car.make FROM person JOIN car ON person.car_id = car.id;
@@ -159,7 +159,11 @@ SELECT * FROM person LEFT JOIN car ON person.car_id = car.id;
 
 SELECT * FROM person LEFT JOIN car ON person.car_id = car.id WHERE car.* IS NULL;
 
+-- Exporting to CSV
+\copy (SELECT * FROM person LEFT JOIN car ON person.car_id = car.id) TO '/Users/yankoaleksandrov/Kamion/learn-PostgreSQL/results.csv' DELIMITER ',' CSV HEADER;
+ 
 
 
 
 
+`
